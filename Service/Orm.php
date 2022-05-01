@@ -60,8 +60,8 @@
         }
 
         // Affiche un enregistrement en fonction de son id
-        public function selectOneById(string $table, int $valeur){
-            $sql =  'SELECT * FROM ' . $table . ' WHERE id = :valeur';
+        public function selectOneBy(string $table, string $key , int $valeur){
+            $sql =  'SELECT * FROM ' . $table . ' WHERE '.$key.' = :valeur';
             $sth = $this->conn->prepare( $sql);
             $sth->bindParam('valeur', $valeur, PDO::PARAM_INT);
             $sth->execute();
