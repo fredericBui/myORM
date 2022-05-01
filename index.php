@@ -18,7 +18,7 @@
 
         /* Listes de toutes les méthodes de la classes ORM :
             - createTable()
-            - add()
+            - insertInto()
             - showTables()
             - select()
             - selectOneBy()
