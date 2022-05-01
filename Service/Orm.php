@@ -35,7 +35,7 @@
         
         // Liste les tables en BDD
         public function showTables(){
-            $sql =  'SHOW TABLES FROM `bddtest`';
+            $sql =  'SHOW TABLES FROM `'.getenv('DATABASE_DBNAME').'`';
             $sth = $this->conn->prepare($sql);
             $sth->execute();
             $tables = $sth->fetchAll();
@@ -81,7 +81,7 @@
         }
 
         // Ajoute un enregistrement
-        public function add(string $table, string $key, string $value){
+        public function insertInto(string $table, string $key, string $value){
             $sql = 'INSERT INTO ' . $table . ' ('.$key.') VALUES (:value)';
             $sth = $this->conn->prepare($sql);
             $sth->bindParam('value', $value, PDO::PARAM_STR);
