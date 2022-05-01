@@ -10,34 +10,21 @@
 <body>
     <?php
 
-        // Connexion à la base de donnée
+        // Importation de la classe ORM
         include("Service/Orm.php");
+
+        // Connexion à la base de donnée en PDO
         $orm = new Orm();
 
-        // Créer
-        $orm->createTable("newTab2");
-
-        // Ajouter 1
-        // $orm->add("user","prenom","francis");
-        
-        // Supprimer 1
-        // $orm->delete("user",5);
-
-        // Modifier 1
-        $orm->setValue("user","prenom","johndoe",1);
-
-        // Afficher toutes les tables en bdd
-        echo "<br/> SHOW TABLES FROM BDD :";
-        $orm->showTables();
-        
-        // Afficher tout
-        echo "<br/> SELECT FROM :";
-        $orm->select("user");
-
-        // Afficher 1
-        echo "<br/> SELECT FROM WHERE :";
-        $orm->selectOneById("user", 1);
-
+        /* Listes de toutes les méthodes de la classes ORM :
+            - createTable()
+            - add()
+            - showTables()
+            - select()
+            - selectOneBy()
+            - setValue()
+            - delete()
+        */
 
     ?>
     
