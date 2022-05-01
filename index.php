@@ -14,6 +14,9 @@
         include("Service/Orm.php");
         $orm = new Orm();
 
+        // Créer
+        $orm->createTable("newTab2");
+
         // Ajouter 1
         // $orm->add("user","prenom","francis");
         

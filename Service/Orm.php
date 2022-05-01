@@ -32,7 +32,7 @@
 
             return $this->conn = $conn;
         }
-
+        
         // Liste les tables en BDD
         public function showTables(){
             $sql =  'SHOW TABLES FROM `bddtest`';
@@ -94,6 +94,14 @@
             $sth = $this->conn->prepare($sql);
             $sth->bindParam('id', $id, PDO::PARAM_INT);
             $sth->execute();
+        }
+
+        // Liste les tables en BDD
+        public function createTable($name){
+            $sql =  'CREATE TABLE '.$name.'( `id` INT PRIMARY KEY NOT NULL, `name` VARCHAR(255) )';
+            $sth = $this->conn->prepare($sql);
+            $sth->execute();
+
         }
 
     }
